@@ -23,6 +23,8 @@ input.onkeyup = (event) => {
             const testarray = surah.data.verses
             const reverse = testarray.reverse()
 
+            div.innerHTML = ''
+
             let surah_name = document.createElement("h1")
             surah_name.textContent = surah.data.name.long
 
