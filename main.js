@@ -24,12 +24,8 @@ input.onkeyup = (event) => {
             const reverse = testarray.reverse()
 
             div.innerHTML = ''
-
             let surah_name = document.createElement("h1")
             surah_name.textContent = surah.data.name.long
-
-            console.log(surah.data.name.long);
-
             div.appendChild(surah_name)
 
             testarray.forEach(element => {
@@ -38,9 +34,11 @@ input.onkeyup = (event) => {
                 a.classList.add('text')
                 a.textContent = element.text.arab + '    ' + '۝'
 
+                let for_wrapper = document.createElement('div')
+                for_wrapper.classList.add('for_wrapper')
+                for_wrapper.appendChild(a)
                 
-                
-                text.appendChild(a)
+                text.appendChild(for_wrapper)
                 
                 
                 a.onclick = (event) => {
