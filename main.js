@@ -32,7 +32,6 @@ input.onkeyup = (event) => {
             let surah_name = document.createElement("h1")
             surah_name.textContent = surah.data.name.long
             div.appendChild(surah_name)
-
             
             testarray.forEach(element => {
                 
