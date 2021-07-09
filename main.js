@@ -9,8 +9,12 @@ var div = document.querySelector('.div-wrapper');
 let value = input.value
 
 input.onkeyup = (event) => {
-    
+
     if (event.keyCode === 13) {
+        
+        if (input.value > 114) {
+            alert("Bunday sura yoq")
+        }
         
         text.innerHTML = ""
         async function quran() {
