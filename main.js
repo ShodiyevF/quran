@@ -17,6 +17,7 @@ input.onkeyup = (event) => {
         }
         
         text.innerHTML = ""
+        
         async function quran() {
             // const response = await fetch(URL + input.value + '/ar.alafasy')
             const response = await fetch(URL + input.value)
@@ -32,6 +33,7 @@ input.onkeyup = (event) => {
             surah_name.textContent = surah.data.name.long
             div.appendChild(surah_name)
 
+            
             testarray.forEach(element => {
                 
                 let a = document.createElement("a")
