@@ -13,14 +13,12 @@ body {
   height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: 'Scheherazade', serif;
+  /* font-family: 'Scheherazade', serif; */
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   background-color: black;
   color: #222;
-  /* background-image: url("https://www.wallpapertip.com/wmimgs/49-495003_top-20-islam-wallpapers-pass-the-knowledge-light.jpg"); */
-  /* background-size: 100% 100%; */
-  /* background-repeat:/ repeat; */
 }
 
 img {
@@ -81,18 +79,18 @@ img {
   align-items: flex-start;
   list-style-type: none;
   flex-wrap: wrap;
-  flex-direction: column-reverse;
+  flex-direction: column;
   background-color: rgba(30, 144, 255, 0.2);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 .for_wrapper:first-child{
-  border-bottom: none;
+  border-top: 1px solid white;
 }
 
 .for_wrapper:last-child{
-  border-top: 1px solid white;
+  border-bottom: none;
 }
 
 .for_wrapper{
@@ -132,8 +130,43 @@ img {
 }
 
 .text:active{
-  background-color: greenyellow;
 }
+
+.active{
+  background-color: rgba(173, 255, 47,0.2);
+}
+
+/* BTNS */
+
+
+.sound-wrapper{
+  padding: 20px;
+  border-top: 1px solid white;
+  width: 100%;
+  background-color: rgba(30, 144, 255, 0.2);
+  display: flex;
+  justify-content: space-between; 
+}
+
+.btn{
+  width: 70px;
+  height: 40px;
+  border: 0;
+  color: black;
+  font-weight: bold;
+  box-shadow: rgb(255, 255, 255, 0.5) 0px 3px 8px;
+}
+
+.btn:active{
+  opacity: 0.9;
+}
+
+.pause_sound{
+  margin-left: 20px;
+}
+
+
+/* BTNS */
 
 @media only screen and (max-width: 769px) {
   .text-wrapper{

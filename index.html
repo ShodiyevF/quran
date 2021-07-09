@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quran</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade:wght@400;700&display=swap" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Scheherazade:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -16,16 +19,28 @@
         <input class="input" type="number" required min="1" max="114" placeholder="suraning raqamini kiriting">
         
         <div class="test" style="display: flex;flex-wrap: wrap;">
-            <div class="div-wrapper"></div>
+            <div class="div-wrapper">
+                
+            </div>
+            <div class="sound-wrapper">
+                <button id="read_all" class="btn read_all" type="submit">Read All</button>
+                <div class="play-pause_wrapper">
+                    <button id="play_sound" class="btn play_sound" type="button">Play</button>
+                    <button id="pause_sound" class="btn pause_sound" type="button">pause</button>
+                </div>
+            </div>
             <div class="text-wrapper">
                 
             </div>
+            
         </div>
+        
     </div>
-
+    
     <div id="audios"></div>
     
-    <script src="main.js"></script>
+    
+    <script src="/js/main.js"></script>
     
 </body>
 </html>

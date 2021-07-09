@@ -115,6 +115,12 @@ const surah_name = [
     "An-Naas",
 ]
 
+// const testtesttest = 
+
+document.getElementById('play_sound').onclick = () => {
+    console.log('asd');
+}
+
 audios.style.display = 'none'
 // const URL = 'https://api.alquran.cloud/v1/surah/'
 const URL = 'https://api.quran.sutanlab.id/surah/'
@@ -129,9 +135,7 @@ input.onkeyup = (event) => {
     
     if (event.keyCode === 13) {
         
-        if (input.value > 114) {
-            alert('Bunday sura yoq!')
-        }
+        
         
         text.innerHTML = ""
         async function quran() {
@@ -141,14 +145,18 @@ input.onkeyup = (event) => {
             let surah = await response.json()
             console.log(surah);
             
-            
             const testarray = surah.data.verses
-            const reverse = testarray.reverse()
+            // const reverse = testarray.reverse()
             
             div.innerHTML = ''
             let surah_name = document.createElement("h1")
             surah_name.textContent = surah.data.name.long
             div.appendChild(surah_name)
+            if (input.value > 114) {
+                alert('Bunday sura yoq!')
+                surah_name.textContent = ''
+                div.innerHTML = ''
+            }
             
             testarray.forEach(element => {
                 
@@ -164,6 +172,8 @@ input.onkeyup = (event) => {
                 
                 
                 a.onclick = (event) => {
+                    let actives = document.querySelectorAll('.active')
+                actives.forEach(li => li.classList.remove('active'))
                     audios.innerHTML = null
                     const notifi = new Audio(element.audio.primary)
                     audios.append(notifi)
@@ -171,6 +181,62 @@ input.onkeyup = (event) => {
                 }
                 
             })
+            
+            
+            const tttt = surah.data.verses.length
+            
+            let index = 0
+            
+            function readSurah(index) {
+                
+                let actives = document.querySelectorAll('.active')
+                actives.forEach(li => li.classList.remove('active'))
+                
+                let textP = document.querySelectorAll('a')
+                textP[index].classList.add('active')
+                audios.innerHTML = null
+                let textAudio = new Audio(surah.data.verses[index].audio.primary)
+                audios.appendChild(textAudio)
+                textAudio.play()
+                textAudio.onended = () => {
+                    if (index < tttt) {
+                        return readSurah(index + 1)
+                    }
+                }
+                
+                play_sound.onclick = () => {
+                    textAudio.play()
+                    
+                    textAudio.onended = () => {
+                        if (index < tttt) {
+                            return readSurah(index + 1)
+                        }
+                    }
+                }
+                
+                pause_sound.onclick = () => {
+                    audios.innerHTML = null
+                    textAudio.pause()
+                    audios.appendChild(textAudio)
+                }
+                
+            }
+            
+            const read_all = document.getElementById('read_all')
+            
+            read_all.onclick = () => {
+                readSurah(index);
+            }
+            
+            
+            
+            pause_sound.onclick = () => {
+                audios.innerHTML = null
+                textAudio.pause()
+                audios.appendChild(textAudio)
+            }
+            
+            
         }
         
         quran()

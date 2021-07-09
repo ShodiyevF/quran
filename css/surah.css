@@ -1,0 +1,129 @@
+ol, ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+p{
+    margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  /* font-family: 'Scheherazade', serif; */
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25px;
+  line-height: 1.5;
+  background-color: #111;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 900px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper{
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background-color: rgba(30, 144, 255, 0.2);
+}
+
+.item:last-child{
+    border-bottom: none;
+}
+
+.item{
+    width: 100%;
+    padding: 10px 30px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.link{
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div_W{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.vahiy_oyat_W{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-eng{
+    text-align: left;
+    font-size: 40px;
+}
+
+.text-arb{
+    margin-top: -2px;
+    font-size: 40px;
+}
+
+.text-vahiy{
+    font-size: 35px;
+    margin-right: 20px;
+}
+
+.text-oyat{
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 769px){
+    .container{
+        width: 660px;
+        margin-left: 55px;
+        margin-right: 55px;
+    }
+}
